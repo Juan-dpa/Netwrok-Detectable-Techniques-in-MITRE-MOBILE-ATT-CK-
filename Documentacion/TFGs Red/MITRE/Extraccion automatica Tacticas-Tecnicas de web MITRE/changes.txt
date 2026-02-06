@@ -1,0 +1,271 @@
+Fecha de la comparación: 02/11/2025
+
+CAMBIOS ENTRE VERSIONES:
+Network Share Detectable Items of Tactics in v18: 5 ----- Network Share Detectable Items of Tactics in v17: 3
+Number of Techniques in v18: 216 ----- Number of Techniques in v17: 211
+Network Share Detectable Items of Techniques in v18: 8 ----- Network Share Detectable Items of Techniques in v17: 5
+Network Traffic Detectable Items of Techniques in v18: 102 ----- Network Traffic Detectable Items of Techniques in v17: 77
+Network Detectable Items of Techniques in v18: 112 ----- Network Detectable Items of Techniques in v17: 85
+Network Only Detectable Items of Techniques in v18: 15 ----- Network Only Detectable Items of Techniques in v17: 26
+Number of Subtechniques in v18: 475 ----- Number of Subtechniques in v17: 468
+Network Share Detectable Items of Subtechniques in v18: 4 ----- Network Share Detectable Items of Subtechniques in v17: 1
+Network Traffic Detectable Items of Subtechniques in v18: 135 ----- Network Traffic Detectable Items of Subtechniques in v17: 91
+Network Detectable Items of Subtechniques in v18: 159 ----- Network Detectable Items of Subtechniques in v17: 112
+Network Only Detectable Items of Subtechniques in v18: 62 ----- Network Only Detectable Items of Subtechniques in v17: 88
+
+Tactic TA0040 - Impact has changed its Network Share -> In v18: NO --- In v17: YES
+Tactic TA0003 - Persistence has changed its Network Share -> In v18: YES --- In v17: NO
+Tactic TA0043 - Reconnaissance has changed the number of techniques -> In v18: 11 --- In v17: 10
+Tactic TA0004 - Privilege Escalation has changed its Network Share -> In v18: YES --- In v17: NO
+Tactic TA0007 - Discovery has changed the number of techniques -> In v18: 34 --- In v17: 33
+Tactic TA0002 - Execution has changed the number of techniques -> In v18: 17 --- In v17: 16
+Tactic TA0005 - Defense Evasion has changed the number of techniques -> In v18: 47 --- In v17: 45
+Tactic TA0006 - Credential Access has changed its Network Share -> In v18: YES --- In v17: NO
+
+Technique T1677 - Poisoned Pipeline Execution IN v18 and NOT IN v17.
+Technique T1678 - Delay Execution IN v18 and NOT IN v17.
+Technique T1679 - Selective Exclusion IN v18 and NOT IN v17.
+Technique T1680 - Local Storage Discovery IN v18 and NOT IN v17.
+Technique T1681 - Search Threat Vendor Data IN v18 and NOT IN v17.
+Technique T1127 - Trusted Developer Utilities Proxy Execution has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1127 - Trusted Developer Utilities Proxy Execution has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1037 - Boot or Logon Initialization Scripts has changed its Network Share -> In v18: YES --- In v17: NO
+Technique T1037 - Boot or Logon Initialization Scripts has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1518 - Software Discovery has changed the number of subtechniques -> In v18: 2 --- In v17: 1
+Technique T1535 - Unused/Unsupported Cloud Regions has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1535 - Unused/Unsupported Cloud Regions has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1606 - Forge Web Credentials has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1606 - Forge Web Credentials has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1568 - Dynamic Resolution has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1552 - Unsecured Credentials has changed its Network Share -> In v18: YES --- In v17: NO
+Technique T1552 - Unsecured Credentials has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1552 - Unsecured Credentials has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1059 - Command and Scripting Interpreter has changed the number of subtechniques -> In v18: 13 --- In v17: 12
+Technique T1059 - Command and Scripting Interpreter has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1059 - Command and Scripting Interpreter has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1039 - Data from Network Shared Drive has changed its Network Traffic -> In v18: NO --- In v17: YES
+Technique T1001 - Data Obfuscation has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1135 - Network Share Discovery has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1135 - Network Share Discovery has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1129 - Shared Modules has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1129 - Shared Modules has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1049 - System Network Connections Discovery has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1049 - System Network Connections Discovery has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1114 - Email Collection has changed its Network Share -> In v18: YES --- In v17: NO
+Technique T1125 - Video Capture has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1125 - Video Capture has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1562 - Impair Defenses has changed the number of subtechniques -> In v18: 12 --- In v17: 11
+Technique T1562 - Impair Defenses has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1562 - Impair Defenses has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1543 - Create or Modify System Process has changed its Network Traffic -> In v18: NO --- In v17: YES
+Technique T1543 - Create or Modify System Process has changed its network detection -> In v18: NO --- In v17: YES
+Technique T1040 - Network Sniffing has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1040 - Network Sniffing has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1071 - Application Layer Protocol has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1550 - Use Alternate Authentication Material has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1550 - Use Alternate Authentication Material has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1530 - Data from Cloud Storage has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1530 - Data from Cloud Storage has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1495 - Firmware Corruption has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1495 - Firmware Corruption has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1667 - Email Bombing has changed its Network Traffic -> In v18: NO --- In v17: YES
+Technique T1667 - Email Bombing has changed its network detection -> In v18: NO --- In v17: YES
+Technique T1216 - System Script Proxy Execution has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1216 - System Script Proxy Execution has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1482 - Domain Trust Discovery has changed its Network Traffic -> In v18: NO --- In v17: YES
+Technique T1482 - Domain Trust Discovery has changed its network detection -> In v18: NO --- In v17: YES
+Technique T1074 - Data Staged has changed its Network Share -> In v18: YES --- In v17: NO
+Technique T1074 - Data Staged has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1074 - Data Staged has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1486 - Data Encrypted for Impact has changed its Network Share -> In v18: NO --- In v17: YES
+Technique T1486 - Data Encrypted for Impact has changed its network detection -> In v18: NO --- In v17: YES
+Technique T1112 - Modify Registry has changed its Network Traffic -> In v18: NO --- In v17: YES
+Technique T1112 - Modify Registry has changed its network detection -> In v18: NO --- In v17: YES
+Technique T1185 - Browser Session Hijacking has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1185 - Browser Session Hijacking has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1036 - Masquerading has changed the number of subtechniques -> In v18: 12 --- In v17: 11
+Technique T1036 - Masquerading has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1036 - Masquerading has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1573 - Encrypted Channel has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1016 - System Network Configuration Discovery has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1016 - System Network Configuration Discovery has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1614 - System Location Discovery has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1614 - System Location Discovery has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1090 - Proxy has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1069 - Permission Groups Discovery has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1069 - Permission Groups Discovery has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1570 - Lateral Tool Transfer has changed its Network Traffic -> In v18: NO --- In v17: YES
+Technique T1572 - Protocol Tunneling has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1610 - Deploy Container has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1610 - Deploy Container has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1056 - Input Capture has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1056 - Input Capture has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1480 - Execution Guardrails has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1480 - Execution Guardrails has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1600 - Weaken Encryption has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1600 - Weaken Encryption has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1571 - Non-Standard Port has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1213 - Data from Information Repositories has changed the number of subtechniques -> In v18: 6 --- In v17: 5
+Technique T1213 - Data from Information Repositories has changed its Network Share -> In v18: YES --- In v17: NO
+Technique T1213 - Data from Information Repositories has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1213 - Data from Information Repositories has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1027 - Obfuscated Files or Information has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1027 - Obfuscated Files or Information has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1029 - Scheduled Transfer has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1033 - System Owner/User Discovery has changed its Network Traffic -> In v18: NO --- In v17: YES
+Technique T1033 - System Owner/User Discovery has changed its network detection -> In v18: NO --- In v17: YES
+Technique T1202 - Indirect Command Execution has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1202 - Indirect Command Execution has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1078 - Valid Accounts has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1078 - Valid Accounts has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1104 - Multi-Stage Channels has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1204 - User Execution has changed the number of subtechniques -> In v18: 5 --- In v17: 4
+Technique T1602 - Data from Configuration Repository has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1132 - Data Encoding has changed its only network detection -> In v18: NO --- In v17: YES
+Technique T1546 - Event Triggered Execution has changed the number of subtechniques -> In v18: 18 --- In v17: 17
+Technique T1546 - Event Triggered Execution has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1546 - Event Triggered Execution has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1195 - Supply Chain Compromise has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1195 - Supply Chain Compromise has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1072 - Software Deployment Tools has changed its Network Traffic -> In v18: YES --- In v17: NO
+Technique T1072 - Software Deployment Tools has changed its network detection -> In v18: YES --- In v17: NO
+Technique T1021 - Remote Services has changed its Network Share -> In v18: NO --- In v17: YES
+Technique T1102 - Web Service has changed its only network detection -> In v18: NO --- In v17: YES
+
+Subtechnique T1036.012 - Browser Fingerprint IN v18 and NOT IN v17.
+Subtechnique T1059.013 - Container CLI/API IN v18 and NOT IN v17.
+Subtechnique T1204.005 - Malicious Library IN v18 and NOT IN v17.
+Subtechnique T1213.006 - Databases IN v18 and NOT IN v17.
+Subtechnique T1518.002 - Backup Software Discovery IN v18 and NOT IN v17.
+Subtechnique T1546.018 - Python Startup Hooks IN v18 and NOT IN v17.
+Subtechnique T1562.013 - Disable or Modify Network Device Firewall IN v18 and NOT IN v17.
+Subtechnique T1600.002 - Disable Crypto Hardware has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1600.002 - Disable Crypto Hardware has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1037.003 - Network Logon Script has changed its Network Share -> In v18: YES --- In v17: NO
+Subtechnique T1037.003 - Network Logon Script has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1132.001 - Standard Encoding has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1027.006 - HTML Smuggling has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1027.006 - HTML Smuggling has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1071.005 - Publish/Subscribe Protocols has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1491.001 - Internal Defacement has changed its Network Traffic -> In v18: NO --- In v17: YES
+Subtechnique T1491.001 - Internal Defacement has changed its network detection -> In v18: NO --- In v17: YES
+Subtechnique T1552.001 - Credentials In Files has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1552.001 - Credentials In Files has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1059.006 - Python has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1059.006 - Python has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1056.003 - Web Portal Capture has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1056.003 - Web Portal Capture has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1218.011 - Rundll32 has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1218.011 - Rundll32 has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1053.002 - At has changed its Network Traffic -> In v18: NO --- In v17: YES
+Subtechnique T1053.002 - At has changed its network detection -> In v18: NO --- In v17: YES
+Subtechnique T1027.003 - Steganography has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1027.003 - Steganography has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1543.003 - Windows Service has changed its Network Traffic -> In v18: NO --- In v17: YES
+Subtechnique T1543.003 - Windows Service has changed its network detection -> In v18: NO --- In v17: YES
+Subtechnique T1127.003 - JamPlus has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1127.003 - JamPlus has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1567.003 - Exfiltration to Text Storage Sites has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1090.001 - Internal Proxy has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1016.001 - Internet Connection Discovery has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1016.001 - Internet Connection Discovery has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1070.007 - Clear Network Connection History and Configurations has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1070.007 - Clear Network Connection History and Configurations has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1001.003 - Protocol or Service Impersonation has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1127.001 - MSBuild has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1127.001 - MSBuild has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1195.002 - Compromise Software Supply Chain has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1195.002 - Compromise Software Supply Chain has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1069.002 - Domain Groups has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1069.002 - Domain Groups has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1606.001 - Web Cookies has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1606.001 - Web Cookies has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1102.002 - Bidirectional Communication has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1001.001 - Junk Data has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1218.008 - Odbcconf has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1218.008 - Odbcconf has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1568.002 - Domain Generation Algorithms has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1090.002 - External Proxy has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1205.001 - Port Knocking has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1218.012 - Verclsid has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1218.012 - Verclsid has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1071.004 - DNS has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1573.002 - Asymmetric Cryptography has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1027.013 - Encrypted/Encoded File has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1027.013 - Encrypted/Encoded File has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1497.003 has changed its name -> In v18: Time Based Checks --- In v17: Time Based Evasion
+Subtechnique T1552.004 - Private Keys has changed its Network Share -> In v18: YES --- In v17: NO
+Subtechnique T1552.004 - Private Keys has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1573.001 - Symmetric Cryptography has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1102.003 - One-Way Communication has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1027.008 - Stripped Payloads has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1027.008 - Stripped Payloads has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1090.003 - Multi-hop Proxy has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1132.002 - Non-Standard Encoding has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1550.002 - Pass the Hash has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1550.002 - Pass the Hash has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1059.008 - Network Device CLI has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1059.008 - Network Device CLI has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1216.001 - PubPrn has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1216.001 - PubPrn has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1027.012 - LNK Icon Smuggling has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1027.012 - LNK Icon Smuggling has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1218.009 - Regsvcs/Regasm has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1218.009 - Regsvcs/Regasm has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1078.002 - Domain Accounts has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1078.002 - Domain Accounts has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1027.017 - SVG Smuggling has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1027.017 - SVG Smuggling has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1053.005 - Scheduled Task has changed its Network Traffic -> In v18: NO --- In v17: YES
+Subtechnique T1053.005 - Scheduled Task has changed its network detection -> In v18: NO --- In v17: YES
+Subtechnique T1001.002 - Steganography has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1568.001 - Fast Flux DNS has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1056.001 - Keylogging has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1056.001 - Keylogging has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1602.001 - SNMP (MIB Dump) has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1600.001 - Reduce Key Space has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1600.001 - Reduce Key Space has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1480.001 - Environmental Keying has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1480.001 - Environmental Keying has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1114.001 - Local Email Collection has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1114.001 - Local Email Collection has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1071.003 - Mail Protocols has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1552.003 has changed its name -> In v18: Shell History --- In v17: Bash History
+Subtechnique T1546.004 - Unix Shell Configuration Modification has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1546.004 - Unix Shell Configuration Modification has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1213.001 - Confluence has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1213.001 - Confluence has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1218.015 - Electron Applications has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1218.015 - Electron Applications has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1074.002 - Remote Data Staging has changed its Network Share -> In v18: YES --- In v17: NO
+Subtechnique T1074.002 - Remote Data Staging has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1074.002 - Remote Data Staging has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1071.001 - Web Protocols has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1027.004 - Compile After Delivery has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1027.004 - Compile After Delivery has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1090.004 - Domain Fronting has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1071.002 - File Transfer Protocols has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1218.014 - MMC has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1218.014 - MMC has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1021.002 - SMB/Windows Admin Shares has changed its Network Share -> In v18: NO --- In v17: YES
+Subtechnique T1059.004 - Unix Shell has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1059.004 - Unix Shell has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1218.013 - Mavinject has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1218.013 - Mavinject has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1552.006 - Group Policy Preferences has changed its Network Share -> In v18: YES --- In v17: NO
+Subtechnique T1552.006 - Group Policy Preferences has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1204.003 - Malicious Image has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1204.003 - Malicious Image has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1053.007 - Container Orchestration Job has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1053.007 - Container Orchestration Job has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1195.001 - Compromise Software Dependencies and Development Tools has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1195.001 - Compromise Software Dependencies and Development Tools has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1557.004 - Evil Twin has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1218.001 - Compiled HTML File has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1218.001 - Compiled HTML File has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1552.005 - Cloud Instance Metadata API has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1552.005 - Cloud Instance Metadata API has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1568.003 - DNS Calculation has changed its only network detection -> In v18: NO --- In v17: YES
+Subtechnique T1542.004 - ROMMONkit has changed its Network Traffic -> In v18: YES --- In v17: NO
+Subtechnique T1542.004 - ROMMONkit has changed its network detection -> In v18: YES --- In v17: NO
+Subtechnique T1602.002 - Network Device Configuration Dump has changed its only network detection -> In v18: NO --- In v17: YES

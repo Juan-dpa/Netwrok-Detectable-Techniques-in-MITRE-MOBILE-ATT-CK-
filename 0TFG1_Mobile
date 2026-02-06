@@ -1,0 +1,26 @@
+Análisis de las Capacidades de Detección de sistemas OpenSource y Comerciales ante ataques en red en entorno móvil
+
+Estudio similar para: Matriz MITRE "Mobile"
+	- Identificar tácticas/Técnicas "Traffic Network" (9)
+	- Banco de ataques:
+		* Datasets: oficiales (artículos científicos) y marcados
+			- Buscar artículos en: https://scholar.google.es/
+			- Ejemplo:	https://fkie-cad.github.io/COMIDDS/content/all_datasets/
+		* Generar Nuevos pcaps
+		Intentar cubrir el % mayor de técnicas/tácticas
+	- Detectar: Snort/FG/PA
+		* Instrucciones FG/PA cuando se empiece esta etapa (Avisar!)
+	- Analizar Resultados (y comparar con los de la parte Enterprise)
+
+https://attack.mitre.org/matrices/mobile/
+
+
+
+TFGs de referencia:
+* Snort + FG:		https://idus.us.es/items/475282dd-3bcf-4bff-8964-44ebc36e361d
+* Snort + PA (+ FG):	https://idus.us.es/items/420fa825-1184-4a94-b55c-18207e6c2852
+* ICS (Snort/FG/PA):	https://idus.us.es/items/ebf43169-5ace-462c-803c-12751eb8c21d
+
+Generar GitHub con Resultados. Ejemplo:
+
+https://github.com/javgarbor10/Snort-FG-PA-Analisis_Capacidad_deteccion_Ataques_red 

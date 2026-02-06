@@ -1,0 +1,22 @@
+Contenido:
+- main_Mitre.py: fichero principal para la obtención del código. Este fichero llama a las funciones de los otros ficheros.
+- getMitre_new_versions.py: fichero que contiene una función para obtener los datos de las versiones nuevas de Mitre (a partir de la v18).
+- getMitre_old_versions.py: fichero que contiene una función para obtener los datos de las versiones antiguas de Mitre.
+- changes_TacTech.py: fichero que contiene la función para comprobar los cambios.
+- table_TacTech.py: fichero que contiene la función para elaborar las tablas de mapeos.
+- utils_excel.py: fichero que contiene funciones para la escritura y lectura de archivos excel.
+- TechniquesTactics_template.xlsx: plantilla de excel para las tablas.
+
+
+Forma de ejecutar el código:
+* Todos los ficheros han de estar dentro del directorio TechniquesTacticsMitre y ejecutarse desde el directorio padre de este.
+1. Si se quiere obtener una versión de Mitre Att&&ck a partir de la web es necesario cambiar el nombre de la plantilla de TechniquesTactics_template.xlsx a TechniquesTactics.xlsx.
+2. Instalar las bibliotecas de python necesarias (bs4, openpyxl, request).
+3. Ejecutar el script main_Mitre.py. El script pedirá inmediatamente por línea de comandos que se introduzca 0, 1 o 2 dependiendo de lo que se quiera hacer:
+               0 - OBTENER una versión y comprobar diferencias con otra versión
+               1 - OBTENER una versión y NO comprobar diferencias con otra versión
+               2 - SOLO comprobar diferencias entre versiones
+
+Cuando se seleccione una opción se van a pedir el/los nombre del excel con el que se quiere comparar.
+
+Tras ello se van mostrando por el terminal las subtécnicas y técnicas que se van obteniendo para finalmente generar el excel y realizar la comprobación de los cambios entre versiones (generando el archivo changes.txt). El script tarda alrededor de 30 minutos en ejecutarse, ya que hay que realizar una petición por cada técnica y subtécnica a la web de mitre y tienen un intervalo de 3 segundos entre petición para no ser detectados como un ataque DDoS. 

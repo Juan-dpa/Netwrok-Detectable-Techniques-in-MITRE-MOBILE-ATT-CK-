@@ -1,0 +1,62 @@
+Técnicas detectables por Red
+
+MITRE <= v17.1 (Datasources)		<=>		MITRE >= v18 (Datacomponents)
+							IDS
+Internet Scan					No		Response Content y Response Metadata.
+Network Traffic					Sí		Network Connection Creation, Network Traffic Content y Network Traffic Flow.
+Network Share					No		Network Share Access. 
+
+
+
+NOTA: Muchas reglas de Snort están etiquetadas en la documentación de Snort con técnicas MITRE que no tienen como fuente el tráfico de red, como por ejemplo:
+
+- 144 - PROTOCOL-FTP ADMw0rm ftp login attempt https://www.snort.org/rule-docs/1-144 --- Técnica 1078.003: Valid Accounts: Local Accounts https://attack.mitre.org/techniques/T1078/003/
+
+- 382 - PROTOCOL-ICMP PING Windows https://www.snort.org/rule-docs/1-382 --- Técnica 1082: System Information Discovery https://attack.mitre.org/techniques/T1082/
+
+- 384 - PROTOCOL-ICMP PING https://www.snort.org/rule-docs/1-384 --- Técnica 1082: System Information Discovery https://attack.mitre.org/techniques/T1082/
+
+- 414 - PROTOCOL-ICMP IPV6 Where-Are-You undefined code https://www.snort.org/rule-docs/1-414 --- Técnica T1592: Gather Victim Host Information https://attack.mitre.org/techniques/T1592/
+
+- 655 - SERVER-MAIL Sendmail 8.6.9 exploit https://www.snort.org/rule-docs/1-655 --- Técnica 1068: Exploitation for Privilege Escalation https://attack.mitre.org/techniques/T1068/
+...
+
+
+
+
+== Data Source => Detection
+
+https://attack.mitre.org/datasources/
+
+Tipo de red:
+					IDS
+* Network Traffic		Sí
+* Network Share			No
+* Internet Scan			No
+
+
+https://attack.mitre.org/versions/v16/techniques/T1001/002/ 
+
+https://attack.mitre.org/versions/v17/techniques/T1001/002/
+
+
+
+== Detection Strategies
+
+https://attack.mitre.org/detectionstrategies/
+
+Data Components = Log Source
+
+https://attack.mitre.org/versions/v18/datacomponents/
+
+https://attack.mitre.org/versions/v18/techniques/T1001/002/
+
+
+== Relación: Data Source <=> Data Component
+
+https://attack.mitre.org/versions/v17/datasources/
+
+
+En el desplegable de la izquierda, al desplegar un datasource aparecen los datacomponents que lo componen.
+
+Al meterte en la página de un datasource concreto sale la información para cada uno de los datacomponents.
