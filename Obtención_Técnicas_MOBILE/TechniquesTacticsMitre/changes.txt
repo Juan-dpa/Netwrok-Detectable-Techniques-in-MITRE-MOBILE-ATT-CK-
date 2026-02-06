@@ -1,0 +1,15 @@
+Fecha de la comparación: 07/02/2026
+
+CAMBIOS ENTRE VERSIONES:
+Number of Techniques in v17: 75 ----- Number of Techniques in v18: 77
+Number of Subtechniques in v17: 46 ----- Number of Subtechniques in v18: 47
+
+Tactic TA0031 - Credential Access has changed the number of techniques -> In v17: 5 --- In v18: 6
+Tactic TA0035 - Collection has changed the number of techniques -> In v17: 13 --- In v18: 15
+Tactic TA0028 - Persistence has changed the number of techniques -> In v17: 7 --- In v18: 8
+
+Technique T1453 - Abuse Accessibility Features IN v18 and NOT IN v17.
+Technique T1676 - Linked Devices IN v18 and NOT IN v17.
+Technique T1636 - Protected User Data has changed the number of subtechniques -> In v17: 4 --- In v18: 5
+
+Subtechnique T1636.005 - Accounts IN v18 and NOT IN v17.

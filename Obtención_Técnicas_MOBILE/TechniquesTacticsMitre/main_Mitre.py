@@ -42,12 +42,12 @@ if opcion in ['0', '1']:
         sys.exit(1)
 
     # Se hace la petición a la URL de la matriz de técnicas de MITRE
-    url = "https://attack.mitre.org/matrices/enterprise/"
+    url = "https://attack.mitre.org/matrices/mobile/"
     response = requests.get(url)
     # Se extrae la versión actual de la matriz de técnicas de MITRE
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
-        tag_version = soup.find("a", href=re.compile(r"^/versions/v\d+/matrices/enterprise/?$"))
+        tag_version = soup.find("a", href=re.compile(r"^/versions/v\d+/matrices/mobile/?$"))
         if tag_version:
             href = tag_version["href"]
             numero_version = re.search(r"/versions/(v\d+)/", href).group(1)
@@ -74,11 +74,11 @@ Si quieres obtener la última versión, introduce 'latest': ''')
         sys.exit(1)
 
     if version_pedida != 'latest' and version_pedida != numero_version:
-        url_version = f"https://attack.mitre.org/versions/{version_pedida}/matrices/enterprise/"
+        url_version = f"https://attack.mitre.org/versions/{version_pedida}/matrices/mobile/"
         response = requests.get(url_version)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            tag_version = soup.find("a", href=re.compile(r"^/versions/v\d+/matrices/enterprise/?$"))
+            tag_version = soup.find("a", href=re.compile(r"^/versions/v\d+/matrices/mobile/?$"))
             if tag_version:
                 href = tag_version["href"]
                 version = ["Versión MITRE ATT&CK:", re.search(r"/versions/(v\d+)/", href).group(1)]
