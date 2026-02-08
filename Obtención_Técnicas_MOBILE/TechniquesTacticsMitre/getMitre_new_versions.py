@@ -14,14 +14,14 @@ def get_mitre_new_version(tactics, techniques, subtechniques, tactic_ids, techni
         tactics[tactic_id, "Network Share"] = 'NO'
         tactics[tactic_id, "Network Traffic"] = 'NO'
         tactics[tactic_id, "Network Detection"] = 'NO'
-        tactics[tactic_id, "Only Network Detection"] = 'YES'
+        tactics[tactic_id, "Only Network Detection"] = 'NO'
     # Inicialización de las técnicas
     for technique_id in technique_ids:
         techniques[technique_id, "Internet Scan"] = 'NO'
         techniques[technique_id, "Network Share"] = 'NO'
         techniques[technique_id, "Network Traffic"] = 'NO'
         techniques[technique_id, "Network Detection"] = 'NO'
-        techniques[technique_id, "Only Network Detection"] = 'YES'
+        techniques[technique_id, "Only Network Detection"] = 'NO'
 
     # Se comprueba si cada subtécnica tiene como fuente el tráfico de red
     for subtechnique_id in subtechnique_ids:
@@ -33,7 +33,7 @@ def get_mitre_new_version(tactics, techniques, subtechniques, tactic_ids, techni
         subtechniques[subtechnique_id, "Network Share"] = 'NO'
         subtechniques[subtechnique_id, "Network Traffic"] = 'NO'
         subtechniques[subtechnique_id, "Network Detection"] = 'NO'
-        subtechniques[subtechnique_id, "Only Network Detection"] = 'YES'
+        subtechniques[subtechnique_id, "Only Network Detection"] = 'NO'
         # Se hace la petición a la URL de la subtécnica
         url = f"https://attack.mitre.org/versions/{version_pedida[1]}/techniques/{technique_id}/{subtechnique_id_part}/"
         response = requests.get(url)
@@ -46,41 +46,53 @@ def get_mitre_new_version(tactics, techniques, subtechniques, tactic_ids, techni
                 if m:
                     det_ids.add(m.group(1))
             
-            for det_id in det_ids:
-                url_det = f"https://attack.mitre.org/versions/{version_pedida[1]}/detectionstrategies/{det_id}/"
-                response_det = requests.get(url_det)
-                if response_det.status_code == 200:
-                    soup_det = BeautifulSoup(response_det.text, 'html.parser')
-                    components = []
-                    for a in soup_det.select('a[href*="/datacomponents/DC"]'):
-                        href = a.get("href", "")
-                        text = a.get_text(strip=True)
-                        m = re.search(r"/datacomponents/(DC\d+)(?:/|#|$)", href)
-                        if m:
-                            components.append(m.group(1))
-                    components = list(set(components))
-                    
-                    for component in components:
-                        if component == 'DC0082' or component == 'DC0085' or component == 'DC0078':
-                            techniques[technique_id, "Network Traffic"] = 'YES'
-                            subtechniques[subtechnique_id, "Network Traffic"] = 'YES'
-                            techniques[technique_id, "Network Detection"] = 'YES'
-                            subtechniques[subtechnique_id, "Network Detection"] = 'YES'
-                        elif component == 'DC0102':
-                            techniques[technique_id, "Network Share"] = 'YES'
-                            subtechniques[subtechnique_id, "Network Share"] = 'YES'
-                            techniques[technique_id, "Network Detection"] = 'YES'
-                            subtechniques[subtechnique_id, "Network Detection"] = 'YES'
-                        elif component == 'DC0104' or component == 'DC0106':
-                            techniques[technique_id, "Internet Scan"] = 'YES'
-                            subtechniques[subtechnique_id, "Internet Scan"] = 'YES'
-                            techniques[technique_id, "Network Detection"] = 'YES'
-                            subtechniques[subtechnique_id, "Network Detection"] = 'YES'
-                        else:
-                            subtechniques[subtechnique_id, "Only Network Detection"] = 'NO'
-                            techniques[technique_id, "Only Network Detection"] = 'NO'
-                else:
-                    raise Exception("Error al realizar la solicitud:", response_det.status_code)
+            if not det_ids:  # Si NO hay detection strategies
+                subtechniques[subtechnique_id, "Only Network Detection"] = 'NO'
+                techniques[technique_id, "Only Network Detection"] = 'NO'
+            else:
+                # Si hay detection strategies, verificar si todos son de red
+                has_non_network = False
+                for det_id in det_ids:
+                    url_det = f"https://attack.mitre.org/versions/{version_pedida[1]}/detectionstrategies/{det_id}/"
+                    response_det = requests.get(url_det)
+                    if response_det.status_code == 200:
+                        soup_det = BeautifulSoup(response_det.text, 'html.parser')
+                        components = []
+                        for a in soup_det.select('a[href*="/datacomponents/DC"]'):
+                            href = a.get("href", "")
+                            text = a.get_text(strip=True)
+                            m = re.search(r"/datacomponents/(DC\d+)(?:/|#|$)", href)
+                            if m:
+                                components.append(m.group(1))
+                        components = list(set(components))
+                        
+                        for component in components:
+                            if component == 'DC0082' or component == 'DC0085' or component == 'DC0078':
+                                techniques[technique_id, "Network Traffic"] = 'YES'
+                                subtechniques[subtechnique_id, "Network Traffic"] = 'YES'
+                                techniques[technique_id, "Network Detection"] = 'YES'
+                                subtechniques[subtechnique_id, "Network Detection"] = 'YES'
+                            elif component == 'DC0102':
+                                techniques[technique_id, "Network Share"] = 'YES'
+                                subtechniques[subtechnique_id, "Network Share"] = 'YES'
+                                techniques[technique_id, "Network Detection"] = 'YES'
+                                subtechniques[subtechnique_id, "Network Detection"] = 'YES'
+                            elif component == 'DC0104' or component == 'DC0106':
+                                techniques[technique_id, "Internet Scan"] = 'YES'
+                                subtechniques[subtechnique_id, "Internet Scan"] = 'YES'
+                                techniques[technique_id, "Network Detection"] = 'YES'
+                                subtechniques[subtechnique_id, "Network Detection"] = 'YES'
+                            else:
+                                has_non_network = True
+                                subtechniques[subtechnique_id, "Only Network Detection"] = 'NO'
+                                techniques[technique_id, "Only Network Detection"] = 'NO'
+                    else:
+                        raise Exception("Error al realizar la solicitud:", response_det.status_code)
+                
+                # Si solo tiene datasources de red, marcar como YES
+                if not has_non_network and techniques[technique_id, "Network Detection"] == 'YES':
+                    subtechniques[subtechnique_id, "Only Network Detection"] = 'YES'
+                    techniques[technique_id, "Only Network Detection"] = 'YES'
             
             print(f"Subtechnique ID: {subtechnique_id}, Subtechnique Name: {subtechnique_name}, Technique ID: {technique_id}")
             # Se espera 3 segundos antes de hacer la siguiente petición y evitar ser detectados como un ataque
@@ -104,35 +116,45 @@ def get_mitre_new_version(tactics, techniques, subtechniques, tactic_ids, techni
                 m = re.search(r"/detectionstrategies/(DET\d+)(?:/|#|$)", href)
                 if m:
                     det_ids.add(m.group(1))
-            
-            for det_id in det_ids:
-                url_det = f"https://attack.mitre.org/versions/{version_pedida[1]}/detectionstrategies/{det_id}/"
-                response_det = requests.get(url_det)
-                if response_det.status_code == 200:
-                    soup_det = BeautifulSoup(response_det.text, 'html.parser')
-                    components = []
-                    for a in soup_det.select('a[href*="/datacomponents/DC"]'):
-                        href = a.get("href", "")
-                        text = a.get_text(strip=True)
-                        m = re.search(r"/datacomponents/(DC\d+)(?:/|#|$)", href)
-                        if m:
-                            components.append(m.group(1))
-                    components = list(set(components))
-                    
-                    for component in components:
-                        if component == 'DC0082' or component == 'DC0085' or component == 'DC0078':
-                            techniques[technique_id, "Network Traffic"] = 'YES'
-                            techniques[technique_id, "Network Detection"] = 'YES'
-                        elif component == 'DC0102':
-                            techniques[technique_id, "Network Share"] = 'YES'
-                            techniques[technique_id, "Network Detection"] = 'YES'
-                        elif component == 'DC0104' or component == 'DC0106':
-                            techniques[technique_id, "Internet Scan"] = 'YES'
-                            techniques[technique_id, "Network Detection"] = 'YES'
-                        else:
-                            techniques[technique_id, "Only Network Detection"] = 'NO'
-                else:
-                    raise Exception("Error al realizar la solicitud:", response_det.status_code)
+
+            if not det_ids:  # Si NO hay detection strategies                
+                techniques[technique_id, "Only Network Detection"] = 'NO'
+            else:
+                # Si hay detection strategies, verificar si todos son de red
+                has_non_network = False
+                for det_id in det_ids:
+                    url_det = f"https://attack.mitre.org/versions/{version_pedida[1]}/detectionstrategies/{det_id}/"
+                    response_det = requests.get(url_det)
+                    if response_det.status_code == 200:
+                        soup_det = BeautifulSoup(response_det.text, 'html.parser')
+                        components = []
+                        for a in soup_det.select('a[href*="/datacomponents/DC"]'):
+                            href = a.get("href", "")
+                            text = a.get_text(strip=True)
+                            m = re.search(r"/datacomponents/(DC\d+)(?:/|#|$)", href)
+                            if m:
+                                components.append(m.group(1))
+                        components = list(set(components))
+                        
+                        for component in components:
+                            if component == 'DC0082' or component == 'DC0085' or component == 'DC0078':
+                                techniques[technique_id, "Network Traffic"] = 'YES'
+                                techniques[technique_id, "Network Detection"] = 'YES'
+                            elif component == 'DC0102':
+                                techniques[technique_id, "Network Share"] = 'YES'
+                                techniques[technique_id, "Network Detection"] = 'YES'
+                            elif component == 'DC0104' or component == 'DC0106':
+                                techniques[technique_id, "Internet Scan"] = 'YES'
+                                techniques[technique_id, "Network Detection"] = 'YES'
+                            else:
+                                has_non_network = True
+                                techniques[technique_id, "Only Network Detection"] = 'NO'
+                    else:
+                        raise Exception("Error al realizar la solicitud:", response_det.status_code)
+                
+                # Si solo tiene datasources de red, marcar como YES
+                if not has_non_network and techniques[technique_id, "Network Detection"] == 'YES':
+                    techniques[technique_id, "Only Network Detection"] = 'YES'
             
             # Se extraen los enlaces de las tácticas asociadas a la técnica
             div_elements = soup.find_all('div', class_='col-md-11 pl-0')

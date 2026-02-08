@@ -40,6 +40,13 @@ def get_mitre_old_version(tactics, techniques, subtechniques, tactic_ids, techni
             solo_ataque_red = 'YES'
             all_datasources_elements = soup.find_all('a', href=lambda href: href and '/datasources/' in href)
             other_datasources = [element for element in all_datasources_elements if ('/datasources/DS0029' not in element['href'] and '/datasources/DS0033' not in element['href'] and '/datasources/DS0035' not in element['href'])]
+
+            #En la matriz mobile existen técnicas sin ningún tipo de detección, se debe filtrar esto, sobre todo para solo_ataque_red, puesto que esta inicializada en YES
+
+            if not all_datasources_elements:  
+                solo_ataque_red = 'NO'
+                techniques[technique_id, "Only Network Detection"] = 'NO'
+
             if any('/datasources/DS0035' in  el for el in [element['href'] for element in all_datasources_elements]):
                 internet_scan = 'YES'
                 techniques[technique_id, "Internet Scan"] = 'YES'
@@ -52,10 +59,10 @@ def get_mitre_old_version(tactics, techniques, subtechniques, tactic_ids, techni
             if internet_scan == 'YES' or network_share == 'YES' or network_traffic == 'YES':
                 ataque_red = 'YES'
                 techniques[technique_id, "Network Detection"] = 'YES'
-            if other_datasources:
+            if other_datasources: #Se entra si el conjunto "other_datasources" no esta vacio.
                 solo_ataque_red = 'NO'
                 techniques[technique_id, "Only Network Detection"] = 'NO'
-
+            
             # Se agrega al diccionario de subtécnicas
             subtechniques[subtechnique_id, "Internet Scan"] = internet_scan
             subtechniques[subtechnique_id, "Network Share"] = network_share
@@ -90,6 +97,12 @@ def get_mitre_old_version(tactics, techniques, subtechniques, tactic_ids, techni
             # Se comprueba si la técnica tiene como fuente el tráfico de red, y solo el tráfico de red
             all_datasources_elements = soup.find_all('a', href=lambda href: href and '/datasources/' in href)
             other_datasources = [element for element in all_datasources_elements if ('/datasources/DS0029' not in element['href'] and '/datasources/DS0033' not in element['href'] and '/datasources/DS0035' not in element['href'])]
+
+
+            if not all_datasources_elements:  
+                solo_ataque_red = 'NO'
+                techniques[technique_id, "Only Network Detection"] = 'NO'
+
             if any('/datasources/DS0035' in el for el in [element['href'] for element in all_datasources_elements]):
                 internet_scan = 'YES'
                 techniques[technique_id, "Internet Scan"] = 'YES'
